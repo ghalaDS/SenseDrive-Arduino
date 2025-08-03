@@ -31,14 +31,16 @@ The motors perform a pre-defined sequence of movements:
 
 
 ### Wiring Overview:
-- **IN1 → D2**
-- **IN2 → D3**
-- **IN3 → D4**
-- **IN4 → D5**
-- **VCC1 (pin 16) → 5V Arduino**
-- **VCC2 (pin 8) → 9V battery (+)**
-- **GND (pins 4, 5, 12, 13) → Arduino GND + battery GND**
-- **EN1 & EN2 connected to 5V** (or bridged to enable motor channels)
+| Component        | Arduino Pin / Source     |
+|------------------|---------------------------|
+| IN1 (Motor 1)     | D2                        |
+| IN2 (Motor 1)     | D3                        |
+| IN3 (Motor 2)     | D4                        |
+| IN4 (Motor 2)     | D5                        |
+| VCC1 (Logic – Pin 16) | 5V Arduino            |
+| VCC2 (Motor Power – Pin 8) | 9V Battery (+)   |
+| GND (Pins 4, 5, 12, 13) | Arduino GND + Battery GND |
+| EN1 & EN2         | Connected to 5V (enabled) |
 
 
 ### Behavior Description:
@@ -74,10 +76,12 @@ This Arduino-based system uses an **HC-SR04 ultrasonic sensor** to detect nearby
 
 ### System Behavior
 ````cpp
-| Distance Detected | Servo Behavior       |
-|-------------------|----------------------|
-| > 10 cm           | Servo stays at 90°   |
-| ≤ 10 cm           | Servo moves to 0°    |
+if (distance > 10) {
+  servo.write(90);  // No obstacle
+} else {
+  servo.write(0);   // Obstacle detected
+}
+
 ````
 
 ### Pin Configuration
@@ -99,18 +103,18 @@ Below are four key stages of the simulation:
 
 2. Object Detected at 9 cm  
 <p align="center">
-  <img src="./object-near.png" alt="Object Near" width="400"/>
+  <img src="./object-near.png" alt="Object Near" width="250"/>
 </p>
 
 3. Object Moved Away (36 cm)  
 
 <p align="center">
-  <img src="./object-far.png" alt="Object Far" width="400"/>
+  <img src="./object-far.png" alt="Object Far" width="250"/>
 </p>
 
 4. Servo Rotation Based on Distance  
 <p align="center">
-  <img src="./servo-rotation.png" alt="Servo Rotation" width="400"/>
+  <img src="./servo-rotationg.png" alt="Servo Rotation" width="400"/>
 </p>
 
 
