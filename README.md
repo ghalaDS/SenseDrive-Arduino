@@ -114,7 +114,7 @@ Below are four key stages of the simulation:
 
 4. Servo Rotation Based on Distance  
 <p align="center">
-  <img src="./servo-rotationg.png" alt="Servo Rotationg" width="400"/>
+  <img src="./servo-rotating.png" alt="Servo Rotating" width="400"/>
 </p>
 
 
