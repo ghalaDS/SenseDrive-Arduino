@@ -62,7 +62,7 @@ Click to view and run the full simulation:
 
 ---
 
-### Ultrasonic Servo Obstacle Avoider
+## Ultrasonic Servo Obstacle Avoider
 This Arduino-based system uses an **HC-SR04 ultrasonic sensor** to detect nearby obstacles. When an object is detected within **10 cm**, the **servo motor** reacts by changing its angle to avoid or respond to the object. This demonstrates a basic collision avoidance mechanism often used in robotics.
 
 
@@ -114,7 +114,7 @@ Below are four key stages of the simulation:
 
 4. Servo Rotation Based on Distance  
 <p align="center">
-  <img src="./servo-rotationg.png" alt="Servo Rotation" width="400"/>
+  <img src="./servo-rotationg.png" alt="Servo Rotationg" width="400"/>
 </p>
 
 
